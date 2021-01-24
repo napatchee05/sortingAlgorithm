@@ -1,11 +1,10 @@
 #include <iostream>
-using namespace std ;
 
 void printArray(int arr[],int n) {
     for (int i = 0 ; i < n ; i++) {
-        cout << arr[i] << " " ;
+        std::cout << arr[i] << " " ;
     }
-    cout << "\n" ;
+    std::cout << "\n" ;
 }
 
 void bubbleSort(int arr[],int n) {
@@ -13,7 +12,7 @@ void bubbleSort(int arr[],int n) {
     for (int i = 0 ; i < n ; i++) {
         for (int j = 0 ; j < n-1 ; j++) {
             if (arr[j] > arr[j+1]) {
-                swap(arr[j],arr[j+1]) ;
+                std::swap(arr[j],arr[j+1]) ;
                 printArray(arr,n) ;
             }
         }
@@ -31,7 +30,7 @@ void selectionSort(int arr[],int n) {
                 maxIdx = i ;
             }
         }
-        swap(arr[maxIdx],arr[k]) ;
+        std::swap(arr[maxIdx],arr[k]) ;
         printArray(arr,n) ;
     }
 }
@@ -40,8 +39,10 @@ void insertionSort(int arr[] , int n) {
     for (int k = n-2 ; k >= 0 ; k--) {
         for (int j = k ; j < n-1 ; j++) {
             if (arr[j] > arr[j+1]) {
-                swap(arr[j],arr[j+1]) ;
+                std::swap(arr[j],arr[j+1]) ;
                 printArray(arr,n) ;
+            } else {
+                break ;
             }
         }
     }
